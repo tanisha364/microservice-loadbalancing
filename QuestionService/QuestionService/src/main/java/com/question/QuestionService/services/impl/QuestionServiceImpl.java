@@ -3,6 +3,8 @@ package com.question.QuestionService.services.impl;
 import com.question.QuestionService.entities.Question;
 import com.question.QuestionService.repositories.QuestionRepository;
 import com.question.QuestionService.services.QuestionService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,11 +12,13 @@ import java.util.List;
 @Service
 public class QuestionServiceImpl implements QuestionService {
 
+	@Autowired
     private QuestionRepository questionRepository;
 
-    public QuestionServiceImpl(QuestionRepository questionRepository) {
-        this.questionRepository = questionRepository;
-    }
+	/*
+	 * public QuestionServiceImpl(QuestionRepository questionRepository) {
+	 * this.questionRepository = questionRepository; }
+	 */
 
     @Override
     public Question create(Question question) {
